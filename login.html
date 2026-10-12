@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Annam Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+
+  <section class="login-screen">
+    <div class="login-art">
+      <img src="https://www.figma.com/api/mcp/asset/8045fed1-c038-484d-8dd1-4a06c06182c1.png" alt="Decorative briyani bowl artwork">
+    </div>
+
+    <div class="login-card">
+
+      <!-- LOGIN FORM -->
+      <form class="auth-form" id="loginForm">
+        <h1 class="auth-title">Login</h1>
+
+        <label class="auth-field">
+          <input type="email" placeholder="Email" required>
+          <img src="https://www.figma.com/api/mcp/asset/f07298eb-269b-447b-ab3b-da57dab8a94b.svg" alt="">
+        </label>
+        <label class="auth-field">
+          <input type="password" placeholder="Password" required>
+          <img src="https://www.figma.com/api/mcp/asset/b166711a-15d0-4092-831b-a0a5e82b4d85.svg" alt="">
+        </label>
+
+        <button type="submit" class="auth-submit">Login</button>
+
+        <div class="auth-links">
+          <a href="#" class="auth-link" id="showSignup">Create an Account</a>
+          <a href="#" class="auth-link">Forgot Password</a>
+        </div>
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form class="auth-form" id="signupForm" hidden>
+        <h1 class="auth-title">Sign UP</h1>
+
+        <label class="auth-field">
+          <input type="text" placeholder="User name" required>
+          <img src="https://www.figma.com/api/mcp/asset/7f05222e-3e5f-43c8-92a8-7fef1881236d.svg" alt="">
+        </label>
+        <label class="auth-field">
+          <input type="email" placeholder="Email" required>
+          <img src="https://www.figma.com/api/mcp/asset/29473fb7-b63f-457a-b84d-7f3687cd9675.svg" alt="">
+        </label>
+        <label class="auth-field">
+          <input type="password" placeholder="Password" required>
+          <img src="https://www.figma.com/api/mcp/asset/90c56027-aded-44b1-94c9-ecd4e4cb4d6c.svg" alt="">
+        </label>
+
+        <button type="submit" class="auth-submit">Sign Up</button>
+
+        <div class="auth-links">
+          <a href="#" class="auth-link" id="showLogin">Back to Login</a>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <script src="animations.js" defer></script>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    document.getElementById('showSignup').addEventListener('click', (e) => {
+      e.preventDefault();
+      loginForm.hidden = true;
+      signupForm.hidden = false;
+    });
+    document.getElementById('showLogin').addEventListener('click', (e) => {
+      e.preventDefault();
+      signupForm.hidden = true;
+      loginForm.hidden = false;
+    });
+  </script>
+
+</body>
+</html>
